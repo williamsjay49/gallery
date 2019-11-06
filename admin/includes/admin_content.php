@@ -23,13 +23,13 @@
                     $user->create();
                     */
 
-
-                    $user = new User();
-                    $user->username = "company";
-
-                    $user->save();
-
                     /*
+
+                    $photo = new Photo();
+                    $photo->title = "Ferrari";
+                    $photo->description = "This car is arguably the best vehicle in the whole world!";
+
+                    $photo->save();
                     $user->delete();
 
                     */
