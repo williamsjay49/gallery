@@ -19,6 +19,8 @@
                             Users
                             <small>Subheading</small>
                         </h1>
+
+                        <a href="add_user.php" class="btn btn-primary">Add user</a>
                         <div class="col-md-12">
                             
                             <table class="table table-hover">
@@ -37,7 +39,7 @@
                                         <tr>
                                             <td><?php echo $user->id; ?></td>
 
-                                            <td><img class="admin-user-thumbnail" src="<?php echo $user->image_path_and_placeholder(); ?>" alt="">
+                                            <td><img class="admin-user-thumbnail user_image" src="<?php echo $user->image_path_and_placeholder(); ?>" alt="">
                                             </td>
                                             <td><?php echo $user->username; ?>
                                                 <div class="action_link">
