@@ -1,6 +1,8 @@
 <?php 
 include("includes/header.php");
-include("includes/init.php"); ?>
+ 
+if(!$session->is_signed_in()) { redirect("login.php"); }
+?>
 
         <!-- Navigation -->
         <?php include("includes/top_nav.php"); ?>

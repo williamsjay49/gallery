@@ -1,6 +1,8 @@
-<?php require_once("includes/init.php"); ?>
+<?php require_once("includes/header.php"); ?>
 
-<?php if($session->is_signed_in()) {
+<?php 
+
+if($session->is_signed_in()) {
 	redirect('index.php');
 }
 
@@ -28,7 +30,8 @@ if(isset($_POST['submit'])) {
 
 ?>
 
-<div class="col-md-4 col-md-offset-5">
+
+<div class="col-md-4 col-md-offset-2">
 
 	<h4 class="bg-danger"><?php echo $the_message; ?></h4>
 	<form action="" method="post">

@@ -8,9 +8,9 @@ class Db_object {
 		return $result_set;
 	}
 
-	public static function find_user_by_id($user_id) {
+	public static function find_by_id($id) {
 
-		$result = static::find_by_query("SELECT * FROM " . static::$db_table . " WHERE id = '". $user_id ."'");
+		$result = static::find_by_query("SELECT * FROM " . static::$db_table . " WHERE id = '". $id ."'");
 
 		return !empty($result) ? array_shift($result) : false;
 

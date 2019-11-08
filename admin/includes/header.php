@@ -1,8 +1,4 @@
-<?php require_once('init.php');
-
-if(!$session->is_signed_in()) { redirect("login.php"); }
-
-?>
+<?php require_once('init.php'); ?>
 
 
 <!DOCTYPE html>
@@ -23,6 +19,7 @@ if(!$session->is_signed_in()) { redirect("login.php"); }
 
     <!-- Custom CSS -->
     <link href="css/sb-admin.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
