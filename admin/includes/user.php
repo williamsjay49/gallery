@@ -34,38 +34,33 @@ class User extends Db_object {
 
 	}
 
-	public function save_user_and_image() {
-		if($this->id) {
-			$this->update();
-
-		} else {
-			if(!empty($this->errors)) {
-				return false;
-			}
-
-			if(empty($this->user_image) || empty($this->temp_path)) {
-				$this->errors[] = "This file is not available";
-				return false;
-			}
-
-			$target_path = SITE_ROOT . DS . 'admin' . DS . $this->upload_directory . DS . $this->user_image;
-
-			if(file_exists($target_path)) {
-				$this->errors[] = "This file {$this->user_image} already exist";
-				return false;
-			}
-
-			if(move_uploaded_file($this->temp_path, $target_path)) {
-				if($this->create()) {
-
-					unset($this->temp_path);
-					return true;
-				}
-			} else {
-				$this->errors[] = "the file directory probably doesn't have permission";
-				return false;
-			}
+	public function upload_photo() {
+	
+		if(!empty($this->errors)) {
+			return false;
 		}
+
+		if(empty($this->user_image) || empty($this->temp_path)) {
+			$this->errors[] = "This file is not available";
+			return false;
+		}
+
+		$target_path = SITE_ROOT . DS . 'admin' . DS . $this->upload_directory . DS . $this->user_image;
+
+		if(file_exists($target_path)) {
+			$this->errors[] = "This file {$this->user_image} already exist";
+			return false;
+		}
+
+		if(move_uploaded_file($this->temp_path, $target_path)) {
+
+				unset($this->temp_path);
+				return true;
+		} else {
+			$this->errors[] = "the file directory probably doesn't have permission";
+			return false;
+		}
+		
 	}
 
 
