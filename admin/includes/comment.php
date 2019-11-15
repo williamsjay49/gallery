@@ -15,8 +15,8 @@ class Comment extends Db_object {
 			$comment = new Comment();
 
 			$comment->photo_id = (int)$photo_id;
-			$comment->photo_id = $author;
-			$comment->photo_id = $body;
+			$comment->author = $author;
+			$comment->body = $body;
 
 			return $comment;
 		}else {

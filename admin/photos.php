@@ -29,6 +29,8 @@
                                         <th>File name</th>
                                         <th>Title</th>
                                         <th>Size</th>
+                                        <th>Count</th>
+                                        <!--<th>View Photo</th> -->
                                     </tr>
                                     <tbody>
                                         <?php $photos = Photo::find_all(); ?>
@@ -39,7 +41,7 @@
                                             <div class="pictures_link">
                                                 <a href="delete_photo.php?id=<?php echo $photo->id; ?>">Delete</a>
                                                 <a href="edit_photos.php?id=<?php echo $photo->id; ?>">Edit</a>
-                                                <a href="">View</a>
+                                                <a href="../photo.php?id=<?php echo $photo->id; ?>">View</a>
                                             </div>
 
                                             </td>
@@ -47,6 +49,14 @@
                                             <td><?php echo $photo->filename; ?></td>
                                             <td><?php echo $photo->title; ?></td>
                                             <td><?php echo $photo->size; ?></td>
+
+                                            <td>
+                                            <a href="comment_photo.php?id=<?php echo $photo->id; ?>">
+                                            <?php $comments = Comment::find_the_comments($photo->id); 
+
+                                            echo count($comments);
+
+                                            ?></a></td>
                                         </tr>
 
                                         <?php endforeach; ?>
