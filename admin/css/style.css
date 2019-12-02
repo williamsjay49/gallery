@@ -11,6 +11,19 @@
 }
 
 
+/*********** Homepage Pagination ************/
+.pager .active a {
+
+  background-color: #000;
+  color: #fff;
+}
+
+.pager .active a:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+
 
 /**** Edit photo *****/
 
